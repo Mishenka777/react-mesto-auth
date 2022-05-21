@@ -51,13 +51,14 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    if(isLoggedIn) {
     Promise.all([api.getProfileData(), api.getInitialCards()])
       .then(([user, cards]) => {
         setCurrentUser(user);
         setCards(cards);
       })
       .catch((err) => console.log(`Ошибка ${err}`));
-  }, []);
+  }}, [isLoggedIn]);
 
   function handleRegister(email, password) {
     Auth.register(email, password)
@@ -65,6 +66,7 @@ export default function App() {
         if (res) {
           setIsInfoTooltipPopupOpen(true);
           setIsTypeTooltipPopup(true);
+          history.push("/sign-in");
         }
       })
       .catch((res) => {

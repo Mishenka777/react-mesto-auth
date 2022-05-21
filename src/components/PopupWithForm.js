@@ -5,7 +5,6 @@ export default function PopupWithForm(props) {
     >
       <form
         className={`popup__container popup__container_type_${props.name}`}
-        noValidate
         onSubmit={props.onSubmit}
         name={props.name}
       >

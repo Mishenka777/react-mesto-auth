@@ -24,14 +24,14 @@ export default function Login(props) {
 
   return (
     <section className="login">
-      <form className="login__form" onSubmit={handleSumbit} noValidate>
+      <form className="login__form" onSubmit={handleSumbit}>
         <h2 className="login__title">Вход</h2>
         <input
           required
           className="login__email"
           minLength="2"
           maxLength="40"
-          type="text"
+          type="email"
           name="email"
           id="email"
           placeholder="E-mail"

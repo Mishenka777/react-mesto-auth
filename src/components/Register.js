@@ -25,7 +25,7 @@ export default function Register(props) {
 
   return (
     <section className="register">
-      <form className="register__form" onSubmit={handleSumbit} noValidate>
+      <form className="register__form" onSubmit={handleSumbit}>
         <h2 className="register__title">Регистрация</h2>
         <input
           onChange={handleChange}
@@ -33,7 +33,7 @@ export default function Register(props) {
           className="register__email"
           minLength="2"
           maxLength="40"
-          type="text"
+          type="email"
           name="email"
           id="email"
           placeholder="E-mail"
